@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.8rem;
+}
+
+main {
+  padding-top: 7rem;
+  width: 1000px;
+  margin: 40px auto;
+}
+
+table,
+td,
+th {
+  border: 1px solid black;
+}
+
+table tr:first-child {
+  background-color: steelblue;
+  color: #ffffff;
+}
+
+table tr:nth-child(2n + 3) {
+  background-color: #aaa;
+}
+
+table {
+  font-size: 2.4rem;
+  border-collapse: separate;
+}
+
+h1 {
+  color: blueviolet;
+  font-weight: 900;
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 4.6rem;
+
+  /* visibility: hidden; */
+  /*opacity: 0.4;*/ /* * Quando menor o número, maior a opacidade */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto', arial, cursive;
+}
+
+h2 {
+  font-size: 2.4rem;
+  /* text-align: center; */
+}
+
+.boxes {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  flex: 30%;
+  height: 10rem;
+  width: 20rem;
+  padding: 1.5rem;
+  margin: 1.5rem;
+  background-color: blue;
+  color: #ffffff;
+  border: 10px solid red;
+  display: inline-block;
+  border-radius: 0.4rem;
+  position: static;
+}
+
+.box + span {
+  display: none;
+  clear: both;
+}
+
+img {
+  height: 10rem;
+  width: 14rem;
+  object-fit: cover;
+}
+
+.bg {
+  height: 20vh;
+  width: 100%;
+  background-color: #555;
+  background-image: url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* table {
+  display: none;
+} */
+
+/* .company-tb {
+  display: none;
+} */
+
+#companies-table {
+  /* display: none; */
+}
+
+/* [data-company='GCO'] {
+  background-color: aqua;
+} */
+
+a {
+  background: steelblue;
+  color: #ffffff;
+  border: none;
+  font-size: 2.8rem;
+  padding: 0.6rem 2.4rem;
+  cursor: pointer;
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out, background-color 1s ease-in-out;
+  display: block;
+}
+
+/* [data-button='products'] { */
+/* [data-anchor='products'] {
+  background: steelblue;
+  color: #ffffff;
+  border: none;
+  font-size: 2.8rem;
+  padding: 0.6rem 2.4rem;
+  cursor: pointer;
+  margin: auto;
+  width: 80%;
+  text-align: center; */
+/* opacity: 0; */ /* * o elemento ocupa espaço quando desaparece e nesse caso vai manter o cursor pointer */
+/* display: none; */ /* * o elemento não ocupa espaço quando desaparece */
+/* visibility: hidden; */ /* * o elemento fica oculto e não mantém o cursor pointer, mas ocupa espaço */
+/* text-decoration: none;
+  transition: all 0.2s ease-in-out, background-color 1s ease-in-out; */
+
+/* display: inline-block; */
+/* display: block; */
+
+/* transform: scale(2); */
+/* transform: scale(0.5); */
+/* transform: scale(1.2) rotate(30deg); */
+/* transform: scale(1.2) rotate(30deg) translateY(10rem); */
+/* } */
+
+[data-anchor='products']:hover {
+  background-color: aqua;
+  color: #222;
+  /* transform: scale(1.2) rotate(30deg) translateY(10rem); */
+  transform: scale(1.2);
+}
+
+[data-anchor='team'] {
+  margin-top: 2rem;
+  animation: pulse 2s infinite;
+  /* animation-fill-mode: forwards; */
+  animation-direction: alternate;
+  transform: scale(1);
+}
+
+@keyframes pulse {
+  /* 0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.35);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  } */
+
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.35);
+    opacity: 0.6;
+  }
+}
+
+.spinner-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.fa-spinner {
+  /* margin-top: 3rem; */
+  margin: 4rem;
+  font-size: 5rem;
+  color: blueviolet;
+  /* animation: load 1s infinite; */
+  /*animation: load 2s 2;*/ /* * load é o keyframes, 2s é o tempo e 2 é quantas vezes será executado */
+  animation: load 2s infinite;
+}
+
+@keyframes load {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  /* 20% {
+    transform: rotateZ(240deg);
+  } */
+
+  /* 40% {
+    transform: rotateZ(240deg);
+  } */
+
+  100% {
+    /* transform: rotateZ(180deg); */
+    transform: rotateZ(360deg);
+  }
+}
+
+[data-company] {
+  background-color: aqua;
+  /* display: none; */
+}
+
+/* * Tamanho tela desktop */
+@media screen and (min-width: 1024px) {
+  .bg {
+    height: 50vh;
+  }
+}
+
+/* * Tamanho tela tablet */
+@media screen and (min-width: 768px) and (max-width: 999px) {
+  .bg {
+    height: 80vh;
+  }
+}
+
+/* * Tamanho tela mobile */
+@media screen and (max-width: 767px) {
+  /* .bg {
+    height: 80vh;
+  } */
+  /* table {
+    display: none;
+  }
+
+  h1 {
+    color: red;
+  } */
+}
+
+/* * Media Query de página de impressão */
+@media print {
+  .bg {
+    display: none; /* * Não exibe a imagem na página de impressão */
+  }
+}
